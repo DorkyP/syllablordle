@@ -6,13 +6,12 @@ import { default as GraphemeSplitter } from 'grapheme-splitter'
 
 export const isWordInWordList = (word: string) => {
   return (
-    WORDS.includes(localeAwareLowerCase(word)) ||
     VALID_GUESSES.includes(localeAwareLowerCase(word))
   )
 }
 
 export const isWinningWord = (word: string) => {
-  return solution === word
+  return solution === word.replaceAll(' ', '')
 }
 
 // build a set of previously revealed letters - present and correct
@@ -83,7 +82,7 @@ export const getWordOfDay = () => {
   const nextday = (index + 1) * msInDay + epochMs
 
   return {
-    solution: localeAwareUpperCase(WORDS[index % WORDS.length]),
+    solution: localeAwareUpperCase(WORDS[index % WORDS.length]).replaceAll(' ',''),
     solutionIndex: index,
     tomorrow: nextday,
   }

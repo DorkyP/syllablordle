@@ -9,14 +9,14 @@ type Props = {
 
 export const CompletedRow = ({ guess, isRevealing }: Props) => {
   const statuses = getGuessStatuses(guess)
-  const splitGuess = unicodeSplit(guess)
+  const splitGuess = guess.trim().split(' ');
 
   return (
     <div className="flex justify-center mb-1">
-      {splitGuess.map((letter, i) => (
+      {splitGuess.map((syllable, i) => (
         <Cell
           key={i}
-          value={letter}
+          value={syllable}
           status={statuses[i]}
           position={i}
           isRevealing={isRevealing}

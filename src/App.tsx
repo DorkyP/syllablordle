@@ -163,11 +163,11 @@ function App() {
 
   const onChar = (value: string) => {
     if (
-      unicodeLength(`${currentGuess}${value}`) <= MAX_WORD_LENGTH &&
+      `${currentGuess}${value}`.split(' ').length <= MAX_WORD_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
-      setCurrentGuess(`${currentGuess}${value}`)
+      setCurrentGuess(`${currentGuess}${value} `)
     }
   }
 
@@ -182,14 +182,14 @@ function App() {
       return
     }
 
-    if (!(unicodeLength(currentGuess) === MAX_WORD_LENGTH)) {
+    if (!(currentGuess.trim().split(' ').length === MAX_WORD_LENGTH)) {
       setCurrentRowClass('jiggle')
       return showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE, {
         onClose: clearCurrentRowClass,
       })
     }
 
-    if (!isWordInWordList(currentGuess)) {
+    if (!isWordInWordList(currentGuess.replaceAll(' ', ''))) {
       setCurrentRowClass('jiggle')
       return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
         onClose: clearCurrentRowClass,
@@ -215,12 +215,9 @@ function App() {
     }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
 
     const winningWord = isWinningWord(currentGuess)
+    console.log('Won? ' + winningWord)
 
-    if (
-      unicodeLength(currentGuess) === MAX_WORD_LENGTH &&
-      guesses.length < MAX_CHALLENGES &&
-      !isGameWon
-    ) {
+    if (guesses.length < MAX_CHALLENGES && !isGameWon) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
 
