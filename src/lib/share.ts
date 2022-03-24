@@ -21,7 +21,7 @@ export const shareStatus = (
     `${GAME_TITLE} ${solutionIndex} ${
       lost ? 'X' : guesses.length
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode))
+    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode)) + `\nhttps://syllablordle.com`;
 
   const shareData = { text: textToShare }
 
@@ -46,7 +46,7 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
   return guesses
     .map((guess) => {
       const status = getGuessStatuses(guess)
-      const splitGuess = unicodeSplit(guess)
+      const splitGuess = guess.trim().split(" ");
 
       return splitGuess
         .map((_, i) => {
