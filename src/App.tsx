@@ -99,7 +99,7 @@ function App() {
     // show the user the how-to info modal
     if (!loadGameStateFromLocalStorage()) {
       setTimeout(() => {
-        // setIsInfoModalOpen(true)
+        setIsInfoModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
     }
   }, [])
