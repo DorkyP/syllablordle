@@ -39,6 +39,7 @@ import './App.css'
 import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
+import { getSyllables } from './lib/statuses'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -61,6 +62,8 @@ function App() {
       ? true
       : false
   )
+  const keyboard = getSyllables()
+  // localStorage.setItem('keyboard', JSON.stringify(getSyllables()));
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )
@@ -254,6 +257,7 @@ function App() {
           />
         </div>
         <Keyboard
+          syllables={getSyllables()}
           onChar={onChar}
           onDelete={onDelete}
           onEnter={onEnter}

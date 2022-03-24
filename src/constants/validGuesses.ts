@@ -1,13 +1,12 @@
 export const VALID_GUESSES = [
 	'amanuensis',
-	'amanaensis',]
-	// 'belletristical',
-	// 'penetralia',
-	// 'superangelic',
-	// 'supercelestial',
-	// 'subterranean',
-	// 'tonsillectomy',
-	// 'appendectomy',
+	'belletristical',
+	'penetralia',
+	'superangelic',
+	'supercelestial',
+	'subterranean',
+	'tonsillectomy',
+	'appendectomy',]
 	// 'momentarily',
 	// 'appendicitis',
 	// 'hypochondriac',

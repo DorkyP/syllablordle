@@ -1,4 +1,4 @@
-import { getStatuses } from '../../lib/statuses'
+import { getStatuses, getSyllables } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
 import { ENTER_TEXT, DELETE_TEXT } from '../../constants/strings'
@@ -8,6 +8,7 @@ type Props = {
   onChar: (value: string) => void
   onDelete: () => void
   onEnter: () => void
+	syllables: string[]
   guesses: string[]
   isRevealing?: boolean
 }
@@ -16,11 +17,11 @@ export const Keyboard = ({
   onChar,
   onDelete,
   onEnter,
+	syllables,
   guesses,
   isRevealing,
 }: Props) => {
   const charStatuses = getStatuses(guesses)
-	
   const onClick = (value: string) => {
     if (value === 'ENTER') {
       onEnter()
@@ -54,7 +55,7 @@ export const Keyboard = ({
   return (
     <div>
       <div className="flex justify-center mb-1">
-        {['A', 'MAN', 'U', 'EN', 'SIS', 'LY', 'UN', 'ES', 'AT', 'IN'].map((key) => (
+        {syllables.slice(0,9).map((key) => (
           <Key
             value={key}
             key={key}
@@ -65,7 +66,7 @@ export const Keyboard = ({
         ))}
       </div>
       <div className="flex justify-center mb-1">
-        {['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'].map((key) => (
+        {syllables.slice(9,17).map((key) => (
           <Key
             value={key}
             key={key}
@@ -79,7 +80,7 @@ export const Keyboard = ({
         <Key width={65.4} value="ENTER" onClick={onClick}>
           {ENTER_TEXT}
         </Key>
-        {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map((key) => (
+        {syllables.slice(17).map((key) => (
           <Key
             value={key}
             key={key}

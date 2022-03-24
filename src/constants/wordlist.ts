@@ -1,13 +1,12 @@
 export const WORDS = [
 	'a man u en sis',
-	'a man a en sis',]
-	// 'belletristical',
-	// 'penetralia',
-	// 'superangelic',
-	// 'supercelestial',
-	// 'subterranean',
-	// 'tonsillectomy',
-	// 'appendectomy',
+	'bell e tris tic al',
+	'pen e tra li a',
+	'su per ang el ic',
+	'su per cel est i al',
+	'sub terr an e an',
+	'ton sill ec to my',
+	'ap pen dec to my',]
 	// 'momentarily',
 	// 'appendicitis',
 	// 'hypochondriac',
