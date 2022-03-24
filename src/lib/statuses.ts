@@ -12,7 +12,8 @@ export const getSyllables = () => {
 		// Remove duplicates
 		syllables = syllables.filter((value, index) => syllables.indexOf(value) === index);
 	}
-
+	// Trim it back down to 24.
+	syllables = syllables.slice(0,24);
 	// Sort into alphabetical order
 	syllables = syllables.sort((a,b) => a < b ? -1 : a > b ? 1 : 0)
 	console.log("ASDF: " + syllables);
