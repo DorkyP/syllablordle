@@ -176,7 +176,8 @@ function App() {
 
   const onDelete = () => {
     setCurrentGuess(
-      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
+      currentGuess.trim().substring(0, currentGuess.trim().lastIndexOf(' ')) +
+        ' '
     )
   }
 

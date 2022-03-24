@@ -16,7 +16,6 @@ export const getSyllables = () => {
 	syllables = syllables.slice(0,24);
 	// Sort into alphabetical order
 	syllables = syllables.sort((a,b) => a < b ? -1 : a > b ? 1 : 0)
-	console.log("ASDF: " + syllables);
 
 	return syllables;
 }
