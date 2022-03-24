@@ -63,7 +63,6 @@ function App() {
       : false
   )
   const [keyboard, setKeyboard] = useState(() => getSyllables())
-  // localStorage.setItem('keyboard', JSON.stringify(getSyllables()));
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
   )

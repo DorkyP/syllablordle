@@ -7,7 +7,7 @@ export const getSyllables = () => {
 	// Add solution at the start
 	var syllables = WORDS[solutionIndex % WORDS.length].toUpperCase().split(' ');
 	// Add more words, remove duplicates, until the keyboard is full.
-	while(syllables.length < 21) {
+	while(syllables.length < 24) {
 		syllables = syllables.concat(WORDS[Math.floor(Math.random() * WORDS.length)].toUpperCase().split(' '));
 		// Remove duplicates
 		syllables = syllables.filter((value, index) => syllables.indexOf(value) === index);
