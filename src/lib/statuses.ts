@@ -42,9 +42,7 @@ export const getGuessStatuses = (guess: string): CharStatus[] => {
 
   // handle all correct cases first
   splitGuess.forEach((syllable, i) => {
-		console.log("asdf: " + syllable + ", " + splitSolution[i]);
     if (syllable === splitSolution[i]) {
-			console.log("got in");
       statuses[i] = 'correct'
       solutionCharsTaken[i] = true
       return
