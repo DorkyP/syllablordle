@@ -8,27 +8,26 @@ export const getStatuses = (
   guesses: string[]
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
-  const splitSolution = unicodeSplit(solution)
+  const splitSolution = WORDS[solutionIndex % WORDS.length].toUpperCase().split(' ');
 
   guesses.forEach((word) => {
-    unicodeSplit(word).forEach((letter, i) => {
-      if (!splitSolution.includes(letter)) {
+    word.toUpperCase().split(' ').forEach((syllable, i) => {
+      if (!splitSolution.includes(syllable)) {
         // make status absent
-        return (charObj[letter] = 'absent')
+        return (charObj[syllable] = 'absent')
       }
 
-      if (letter === splitSolution[i]) {
+      if (syllable === splitSolution[i]) {
         //make status correct
-        return (charObj[letter] = 'correct')
+        return (charObj[syllable] = 'correct')
       }
 
-      if (charObj[letter] !== 'correct') {
+      if (charObj[syllable] !== 'correct') {
         //make status present
-        return (charObj[letter] = 'present')
+        return (charObj[syllable] = 'present')
       }
     })
   })
-
   return charObj
 }
 
