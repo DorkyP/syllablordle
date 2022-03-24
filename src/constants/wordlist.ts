@@ -1,5 +1,6 @@
 export const WORDS = [
-	'am a nuen sis',]
+	'a man u en sis',
+	'a man a en sis',]
 	// 'belletristical',
 	// 'penetralia',
 	// 'superangelic',

@@ -1,4 +1,6 @@
-import { solution, unicodeSplit } from './words'
+import { Console } from 'console'
+import { WORDS } from '../constants/wordlist'
+import { solution, solutionIndex, unicodeSplit } from './words'
 
 export type CharStatus = 'absent' | 'present' | 'correct'
 
@@ -31,16 +33,18 @@ export const getStatuses = (
 }
 
 export const getGuessStatuses = (guess: string): CharStatus[] => {
-  const splitSolution = unicodeSplit(solution)
-  const splitGuess = unicodeSplit(guess)
+	const splitSolution = WORDS[solutionIndex % WORDS.length].toLowerCase().split(' ');
+	const splitGuess = guess.toLowerCase().split(' ');
 
   const solutionCharsTaken = splitSolution.map((_) => false)
 
   const statuses: CharStatus[] = Array.from(Array(guess.length))
 
   // handle all correct cases first
-  splitGuess.forEach((letter, i) => {
-    if (letter === splitSolution[i]) {
+  splitGuess.forEach((syllable, i) => {
+		console.log("asdf: " + syllable + ", " + splitSolution[i]);
+    if (syllable === splitSolution[i]) {
+			console.log("got in");
       statuses[i] = 'correct'
       solutionCharsTaken[i] = true
       return

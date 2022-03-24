@@ -96,7 +96,7 @@ function App() {
     // show the user the how-to info modal
     if (!loadGameStateFromLocalStorage()) {
       setTimeout(() => {
-        setIsInfoModalOpen(true)
+        // setIsInfoModalOpen(true)
       }, WELCOME_INFO_MODAL_MS)
     }
   }, [])
@@ -189,12 +189,12 @@ function App() {
       })
     }
 
-    if (!isWordInWordList(currentGuess.replaceAll(' ', ''))) {
-      setCurrentRowClass('jiggle')
-      return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
-        onClose: clearCurrentRowClass,
-      })
-    }
+    // if (!isWordInWordList(currentGuess.replaceAll(' ', ''))) {
+    //   setCurrentRowClass('jiggle')
+    //   return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
+    //     onClose: clearCurrentRowClass,
+    //   })
+    // }
 
     // enforce hard mode - all guesses must contain all previously revealed letters
     if (isHardMode) {

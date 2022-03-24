@@ -1,5 +1,6 @@
 export const VALID_GUESSES = [
-	'amanuensis',]
+	'amanuensis',
+	'amanaensis',]
 	// 'belletristical',
 	// 'penetralia',
 	// 'superangelic',

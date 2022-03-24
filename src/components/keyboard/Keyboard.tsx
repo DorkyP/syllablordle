@@ -54,7 +54,7 @@ export const Keyboard = ({
   return (
     <div>
       <div className="flex justify-center mb-1">
-        {['AM', 'A', 'NU', 'EN', 'SIS', 'LY', 'UN', 'ES', 'AT', 'IN'].map((key) => (
+        {['A', 'MAN', 'U', 'EN', 'SIS', 'LY', 'UN', 'ES', 'AT', 'IN'].map((key) => (
           <Key
             value={key}
             key={key}
