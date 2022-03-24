@@ -62,7 +62,7 @@ function App() {
       ? true
       : false
   )
-  const keyboard = getSyllables()
+  const [keyboard, setKeyboard] = useState(() => getSyllables())
   // localStorage.setItem('keyboard', JSON.stringify(getSyllables()));
   const [isHighContrastMode, setIsHighContrastMode] = useState(
     getStoredIsHighContrastMode()
@@ -257,7 +257,7 @@ function App() {
           />
         </div>
         <Keyboard
-          syllables={getSyllables()}
+          syllables={keyboard}
           onChar={onChar}
           onDelete={onDelete}
           onEnter={onEnter}
