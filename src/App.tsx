@@ -4,6 +4,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
+import { Footer } from './components/footer/Footer'
 import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
@@ -263,6 +264,7 @@ function App() {
           guesses={guesses}
           isRevealing={isRevealing}
         />
+        <Footer />
         <InfoModal
           isOpen={isInfoModalOpen}
           handleClose={() => setIsInfoModalOpen(false)}
