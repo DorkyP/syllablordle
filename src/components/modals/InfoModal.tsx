@@ -18,50 +18,49 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="W"
+          value="E"
           status="correct"
         />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="CO" />
+        <Cell value="LOG" />
+        <Cell value="I" />
+        <Cell value="CAL" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        The syllable "E" is in the word and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="I" />
+        <Cell value="U" />
+        <Cell value="NI" />
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="L"
+          value="VER"
           status="present"
         />
-        <Cell value="O" />
-        <Cell value="T" />
+        <Cell value="SI" />
+        <Cell value="TY" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        The syllable "VER" is in the word but in the wrong spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="V" />
-        <Cell value="A" />
-        <Cell value="G" />
-        <Cell isRevealing={true} isCompleted={true} value="U" status="absent" />
-        <Cell value="E" />
+        <Cell value="IN" />
+        <Cell value="EV" />
+        <Cell value="IT" />
+        <Cell isRevealing={true} isCompleted={true} value="A" status="absent" />
+        <Cell value="BLE" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        The syllable "A" is not in the word in any spot.
       </p>
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+        This is an open source guessing game -{' '}
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
+          href="https://github.com/DorkyP/syllablordle"
           className="underline font-bold"
         >
           check out the code here
