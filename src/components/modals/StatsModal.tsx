@@ -3,7 +3,7 @@ import { StatBar } from '../stats/StatBar'
 import { Histogram } from '../stats/Histogram'
 import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
-import { tomorrow } from '../../lib/words'
+import { solution, tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 import {
   STATISTICS_TITLE,
@@ -64,6 +64,9 @@ export const StatsModal = ({
         gameStats={gameStats}
         numberOfGuessesMade={numberOfGuessesMade}
       />
+			<h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+				Define: <a href={`https://www.wordnik.com/words/`+solution.toLowerCase()} target="_blank" rel="noopener noreferrer">{solution}</a>
+      </h4>
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
