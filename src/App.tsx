@@ -166,7 +166,7 @@ function App() {
 
   const onChar = (value: string) => {
     if (
-      `${currentGuess}${value}`.split(' ').length <= MAX_WORD_LENGTH &&
+      `${currentGuess}${value}`.trim().split(' ').length <= MAX_WORD_LENGTH &&
       guesses.length < MAX_CHALLENGES &&
       !isGameWon
     ) {
