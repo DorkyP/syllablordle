@@ -7,10 +7,12 @@ export const getSyllables = () => {
 	// Add solution at the start
 	var syllables = WORDS[solutionIndex % WORDS.length].toUpperCase().split(' ');
 	// Add more words, remove duplicates, until the keyboard is full.
+	var i=2
 	while(syllables.length < 24) {
-		syllables = syllables.concat(WORDS[Math.floor(Math.random() * WORDS.length)].toUpperCase().split(' '));
+		syllables = syllables.concat(WORDS[(solutionIndex*i) % WORDS.length].toUpperCase().split(' '));
 		// Remove duplicates
 		syllables = syllables.filter((value, index) => syllables.indexOf(value) === index);
+		i++;
 	}
 	// Trim it back down to 24.
 	syllables = syllables.slice(0,24);

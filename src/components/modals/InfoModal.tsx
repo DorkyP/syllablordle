@@ -18,16 +18,16 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell
           isRevealing={true}
           isCompleted={true}
-          value="E"
+          value="EC"
           status="correct"
         />
-        <Cell value="CO" />
+        <Cell value="O" />
         <Cell value="LOG" />
         <Cell value="I" />
         <Cell value="CAL" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The syllable "E" is in the word and in the correct spot.
+        The syllable "EC" is in the word and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
