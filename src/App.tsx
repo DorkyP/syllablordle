@@ -175,10 +175,14 @@ function App() {
   }
 
   const onDelete = () => {
-    setCurrentGuess(
-      currentGuess.trim().substring(0, currentGuess.trim().lastIndexOf(' ')) +
-        ' '
-    )
+    if (currentGuess.trim().lastIndexOf(' ') > 0) {
+      setCurrentGuess(
+        currentGuess.trim().substring(0, currentGuess.trim().lastIndexOf(' ')) +
+          ' '
+      )
+    } else {
+      setCurrentGuess('')
+    }
   }
 
   const onEnter = () => {

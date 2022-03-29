@@ -52,7 +52,7 @@ export const WORDS = [
 	'e lec tro pa thy',
 	'li ne a ri ty',
 	'spe cif i ci ty',
-	'el as tic i ty',
+	'e las tic i ty',
 	'san a tor i um',
 	're con cil a ble',
 	'con fig ur a tion',
