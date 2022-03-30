@@ -68,7 +68,7 @@ export const StatsModal = ({
 				<div>
 					<h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
 						<a href={`https://www.wordnik.com/words/`+solution.toLowerCase()} target="_blank" rel="noopener noreferrer">
-							Define: {solution}
+							Define: <span className="underline">{solution}</span>
 						</a>
 					</h4>
 					<div className="mt-5 sm:mt-6 columns-2 dark:text-white">
